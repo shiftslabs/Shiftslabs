@@ -1,0 +1,10 @@
+name = "shiftslabs-chatbot"
+compatibility_date = "2024-01-01"
+
+[vars]
+APP_NAME = "Chatbot"
+APP_URL = "https://chatbot.shiftslabs.com"
+
+[build]
+command = "npm run build"
+cwd = "."

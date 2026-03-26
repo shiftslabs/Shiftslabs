@@ -1,0 +1,16 @@
+name = "shiftslabs-auth"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[[kv_namespaces]]
+binding = "AUTH_CODES"
+id = "YOUR_AUTH_CODES_KV_ID"
+
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "YOUR_RATE_LIMIT_KV_ID"
+
+# Uncomment when you have Supabase connection
+# [[hyperdrive]]
+# binding = "AUTH_DB"
+# id = "YOUR_HYPERDRIVE_ID"

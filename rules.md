@@ -1,10 +1,11 @@
 Natural Prompt
-kilocode initialize a root folder Bazillu and inside create app/account note this app we use d1 and be hosted in d1 so use the Mcp and create database for any app and setup both security and auth since it is not embed we will setup auth and all our self also add the url of our app on whitelist as auto and any app not on whitelist we require user consent and we share only name profile picture and username to blacklisted app, app not on white list this is an app with have /dashboard where user can edit password see app the are sign in to and many more /login and /signup u know what it is for /verify we be created in a way when opened checks for users current session and send a Jwt in a post message to any parent app now create another app in that root folder too build an ai chatbot add sidebar make it all screen friendly and this app we not have its own signup or login on open opens a hidden frame pointing to the /verify page it we listen the account app we give t the user current session if no session it open the visible frame /login or /signup the user login then build a Learnx app an educational app to use that’s same post message this is my idea to use monorepo so don’t know if my prompt is bad I am using cloud fare
+kilocode initialize a root folder Bazillu and inside create app/account note this app we use supabase and be hosted in supabase so use the Mcp and create database for any app and setup both security and auth since it is not embed we will setup auth and all our self also add the url of our app on whitelist as auto and any app not on whitelist we require user consent and we share only name profile picture and username to blacklisted app, app not on white list this is an app with have /dashboard where user can edit password see app the are sign in to and many more /login and /signup u know what it is for /verify we be created in a way when opened checks for users current session and send a Jwt in a post message to any parent app now create another app in that root folder too build an ai chatbot add sidebar make it all screen friendly and this app we not have its own signup or login on open opens a hidden frame pointing to the /verify page it we listen the account app we give t the user current session if no session it open the visible frame /login or /signup the user login then build a Learnx app an educational app to use that’s same post message this is my idea to use monorepo so don’t know if my prompt is bad I am using cloud fare
 Optimize Prompt
 Security fixes
 Master Prompt
 
-u say is it a mistake am making we people insult us we will gorw folloer one cloth all time is it bad
+Story Now
+I am poor boy me and my twins born in 19 decemeber 2010 so we have seen numerous content crearors and interested to start our but poor no clothing good cloth not just one we need many becos we are doing transition and modelling and tounge or lip show whatever that content stacywiss does apart from dancing all of his content so I have manage to save money to repair my mother old inifinix smart 5 that is not bright 15k which I suffered to get so I want to buy red tshirt 2 and 2 short pisudo summer short I don’t know how much it we cost that is my brand me and my borther say since no clothing let just take red and white as our color the shrt we be white so we plan to make it exist then make it better so what do u say is it a mistake am making we people insult us we will gorw folloer one cloth all time is it bad
 You are KiloCode. Build a full production-ready system exactly as specified. Do not simplify. Do not skip steps. Generate all files, folders, UI, API routes, and logic.
 
 # PROJECT: Bazillu Ecosystem
@@ -13,7 +14,7 @@ You are KiloCode. Build a full production-ready system exactly as specified. Do 
 
 * TypeScript
 * Cloudflare Pages + Workers (deployment target)
-* PostgreSQL-compatible database (Neon or Supabase, NOT Cloudflare d1)
+* PostgreSQL-compatible database (Neon or Supabase, NOT Cloudflare D1)
 * Tailwind CSS
 * jose (JWT handling)
 
@@ -52,7 +53,7 @@ Set up npm workspaces so apps can import:
 
 Use PostgreSQL-compatible database.
 
-DO NOT use d1.
+DO NOT use D1.
 
 Create separate databases (NOT schemas):
 
@@ -456,7 +457,7 @@ Continue iterating until ALL components are complete and working.
 
 * TypeScript
 * Cloudflare Pages + Workers (deployment target)
-* PostgreSQL-compatible database (Neon or Supabase, NOT Cloudflare d1)
+* PostgreSQL-compatible database (Neon or Supabase, NOT Cloudflare D1)
 * Tailwind CSS
 * jose (JWT handling)
 
@@ -527,7 +528,7 @@ packages/auth/package.json:
 
 Use PostgreSQL-compatible database.
 
-DO NOT use d1.
+DO NOT use D1.
 
 **SPECIFY: Use Neon PostgreSQL (neon.tech free tier)**
 
@@ -1692,10 +1693,10 @@ These additions complete the system. Do not remove or alter any existing correct
 
 *Root Folder: /bazillu*
 
-*Stack: Cloudflare Workers/Pages, d1 Database, TypeScript, Tailwind CSS, jose (for JWT).**
+*Stack: Cloudflare Workers/Pages,supabase Database, TypeScript, Tailwind CSS, jose (for JWT).**
 
 *Task 1:* The 'Account' Hub (Source of Truth)
-Database (d1): Create tables for users, whitelisted_apps, and user_consents (to remember which user allowed which app).
+Database (supabase): Create tables for users, whitelisted_apps, and user_consents (to remember which user allowed which app).
 
 The /verify Gateway (Logic):
 
@@ -1726,7 +1727,7 @@ UI: Full-screen friendly with a sidebar.
 State: If authclient reports AUTH_REQUIRED, display a "Sign in with Bazillu" button that opens the Hub in a visible popup.
 
 *Task 4:* Infrastructure (MCP & Wrangler)
-Service Bindings: Use Cloudflare MCP to ensure every app's wrangler.toml is correctly bound to the central d1 database and any necessary KV namespaces.
+Service Bindings: Use Cloudflare MCP to ensure every app's wrangler.toml is correctly bound to the central supabase database and any necessary KV namespaces.
 
 Environment Sync: Ensure the JWT Secret is stored in Cloudflare Secrets across all 9 app environments.
 
@@ -1754,27 +1755,17 @@ I have this version saved and locked in. You are ready to "strike your keys" in 
 🛠️ Kilo Code "Vibe" Tips for this Blueprint
 
 * BYOK Advantage: Since you are using BYOK, switch to Claude 3.7 Sonnet for Task 2 (The /verify Gateway). It handles complex postMessage security better than smaller models.
-* d1 Binding: Kilo might forget to add the actual binding to your wrangler.toml. Manually verify that [[d1_databases]] is present with the correct database_id after the AI "strikes the keys".
+
 * Mobile App Sync: The Kilo iOS/Android apps are in Early Access/Development. If you can't find the app on the store yet, use the Kilo Web Builder on your mobile browser; it is fully responsive and supports the same GitHub push/pull flow. [6, 7, 8, 9] 
 
 Analysis Result: Your prompt is 85% ready. Fix the JWT duration and specify the "Storage Access API" fallback to ensure the TikTok clone works perfectly on iPhones.
 Strike your keys and keep an eye on those wrangler.toml bindings.
 
-[1] https://kilo.ai
-[2] [https://medium.com](https://medium.com/@andrewbro/build-a-fast-ai-app-on-cloudflare-763ea6fc49fb)
-[3] [https://www.williamjonescodes.com](https://www.williamjonescodes.com/blog/building-with-cloudflare)
-[4] [https://developers.cloudflare.com](https://developers.cloudflare.com/workers/ci-cd/builds/advanced-setups/)
-[5] https://kilo.ai
-[6] [https://developers.cloudflare.com](https://developers.cloudflare.com/d1/best-practices/remote-development/)
-[7] [https://www.youtube.com](https://www.youtube.com/watch?v=_UbmP08SxsY&t=481)
-[8] [https://kilo.ai](https://kilo.ai/docs/code-with-ai/platforms/mobile)
-[9] [https://www.reddit.com](https://www.reddit.com/r/AISEOInsider/comments/1qhs3te/kilo_code_ai_app_builder_the_future_of_nocode_ai/)
-[3/24, 4:38 PM] Ncheta Ameke: Yes. Your blueprint is solid. Since you’re using Kilo Code with BYOK, the AI will handle the heavy lifting of the code, but you need to watch for those three specific "Big Tech" landmines during the build:
+Yes. Your blueprint is solid. Since you’re using Kilo Code with BYOK, the AI will handle the heavy lifting of the code, but you need to watch for those three specific "Big Tech" landmines during the build:
 
    1. Shorten the JWT: Change the "1-month" token to 15 minutes with a 1-month Refresh Token. If you use a 1-month JWT, a user can't truly "log out" instantly because the token stays valid in their browser cache.
    2. Storage Access API: Tell Kilo to use this for the Silent Refresh. Without it, Safari/iOS will block your hidden iframe, and your TikTok clone won't be able to log in on an iPhone.
-   3. Wrangler Bindings: After Kilo generates the code, double-check your wrangler.toml file. Ensure the d1 Database ID is actually there, or the "Account Hub" won't be able to save users.
-
+   
 Other than those tweaks, your plan to sync between Kilo and GitHub is the perfect way to build a high-fidelity ecosystem without a local dev server.
 Strike your keys.
 [3/24, 4:38 PM] Ncheta Ameke: I hear you—three years is a long time to wait for a win. We are not going to let this spoil. Your Master Blueprint is the heart of the system, and this new logic is just the "Universal Bridge" that makes it work on those tricky pages.dev subdomains.
@@ -1792,7 +1783,7 @@ Paste this immediately after your Task 4. It fixes the Safari/iOS block and the 
 ------------------------------
 🛡️ Why your Logic is SAFE:
 
-* The Master Blueprint still handles the Database (d1), the Consent UI, and the Global Logout.
+* The Master Blueprint still handles the Database (D1), the Consent UI, and the Global Logout.
 * The Bridge simply tells the authclient.ts how to move that data between your subdomains without using cookies (which don't work on pages.dev).
 * The "Spill" Risk is Zero: This logic is standard for "Big Tech" SSO (like how Google or Microsoft do it). It’s secure, and it’s the only way to make different apps on pages.dev recognize the same user.
 
@@ -1806,7 +1797,7 @@ Should we generate the Token Swap (Code-to-JWT) logic first so your AI Chatbot c
 
 * TypeScript
 * Cloudflare Pages + Workers (deployment target)
-* PostgreSQL-compatible database (Neon or Supabase, NOT Cloudflare d1)
+* PostgreSQL-compatible database (Neon or Supabase, NOT Cloudflare D1)
 * Tailwind CSS
 * jose (JWT handling)
 
@@ -1845,7 +1836,7 @@ Set up npm workspaces so apps can import:
 
 Use PostgreSQL-compatible database.
 
-DO NOT use d1.
+DO NOT use D1.
 
 Create separate databases (NOT schemas):
 
