@@ -1,0 +1,17 @@
+{
+  "name": "@shiftslabs/learnx",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler pages dev",
+    "deploy": "wrangler pages deploy"
+  },
+  "dependencies": {
+    "@shiftslabs/authclient": "workspace:*"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241127.0",
+    "wrangler": "^3.93.0"
+  }
+}

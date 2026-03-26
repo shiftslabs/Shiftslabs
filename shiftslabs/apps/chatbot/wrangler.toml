@@ -1,0 +1,7 @@
+name = "shiftslabs-chatbot"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "_output"
+
+[vars]
+APP_NAME = "Chatbot"
+CLIENT_ID = "chatbot"
