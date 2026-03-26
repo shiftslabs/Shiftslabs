@@ -1,19 +1,16 @@
 {
   "name": "shiftslabs-ecosystem",
-  "version": "1.0.0",
   "private": true,
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
   "scripts": {
-    "dev": "turbo run dev",
-    "build": "turbo run build",
-    "deploy": "turbo run deploy",
-    "deploy:auth": "cd packages/auth && wrangler deploy",
-    "deploy:chatbot": "cd apps/chatbot && wrangler pages deploy dist",
-    "deploy:learnx": "cd apps/learnx && wrangler pages deploy dist",
-    "deploy:classroom": "cd apps/classroom && wrangler pages deploy dist"
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "format": "turbo format",
+    "test": "turbo test"
   },
   "devDependencies": {
     "turbo": "^2.0.0",
